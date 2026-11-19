@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101113">
+    <meta name="description" content="A beginner-friendly guide to Formula 1 aerodynamics, hybrid power units, tyres and DRS.">
+    <title>Car technology / The Inside Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.130.0/examples/js/loaders/GLTFLoader.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/aero.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="The Inside Line home"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="drivers.html">Drivers</a><a href="teams.html">Teams</a><a class="active" aria-current="page" href="tech.html">Car tech</a><a href="rules2026.html">2026 Rules</a><a href="strategy.html">Strategy</a><a href="helmet.html">Helmet Gallery</a></nav>
+        <span class="header-note"><i></i> RACE. ENGINEERED.</span>
+    </header>
+    <main>
+        <section class="page-hero section-wrap">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Engineering the edge</p>
+            <div class="page-title-row">
+                <div>
+                    <h1>Speed is<br><span>designed.</span></h1>
+                    <p>A modern F1 car is a finely balanced system. Here are a few of the ideas that make it work.</p>
+                </div><span class="page-index">04 / 04</span></div>
+        </section>
+        <section class="section-wrap tech-explorer" aria-labelledby="tech-explorer-title">
+            <div class="explorer-heading">
+                <div>
+                    <p class="eyebrow">EXPLODED VIEW</p>
+                    <h2 id="tech-explorer-title">Explore the machine.</h2>
+                    <p>Drag to rotate. Select a part on the model or use the controls below.</p>
+                </div>
+                <div class="model-controls"><button type="button" class="model-button" data-f1-action="disassemble" aria-pressed="false">Disassemble</button><button type="button" class="model-button" data-f1-action="aero" aria-pressed="false">Active aero</button></div>
+            </div>
+            <div class="tech-viewer" data-car-view>
+                <canvas class="car-canvas tech-canvas" id="tech-car" data-f1-scene aria-label="Interactive three-dimensional Formula 1 car. Select parts to see explanations." role="img"></canvas>
+                <div class="model-label"><span data-model-status>LOADING CC0 F1 MODEL</span><span>DRAG TO ROTATE</span></div>
+                <p class="scene-status" data-scene-status role="status" hidden></p>
+            </div>
+            <div class="tech-details">
+                <div class="part-picker" aria-label="Select a car part">
+                    <button type="button" data-select-part="front-wing">Front wing</button><button type="button" data-select-part="rear-wing">Rear wing / DRS</button><button type="button" data-select-part="floor">Floor &amp; diffuser</button><button type="button"
+                        data-select-part="power-unit">Power unit</button><button type="button" data-select-part="tyres">Tyres</button>
+                </div>
+                <article class="part-callout" data-part-callout aria-live="polite">
+                    <img class="part-callout-image" data-part-image src="assets/wing.webp" alt="Illustration of an F1 front wing with adjustable aerodynamic flaps">
+                    <div class="part-callout-copy">
+                        <p class="card-team">SELECT A COMPONENT</p>
+                        <h2>How does it work?</h2>
+                        <p>Choose a highlighted area on the 3D car to see its illustration and explanation.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section-wrap tech-reference" aria-label="F1 technology quick guide">
+            <article><span>01 / AERO</span>
+                <h2>Aerodynamics</h2>
+                <p>Wings create downforce. The floor and diffuser guide air under the car. DRS opens a rear-wing flap to reduce drag in permitted zones.</p>
+            </article>
+            <article><span>02 / POWER</span>
+                <h2>Power unit</h2>
+                <p>The hybrid power unit combines an internal-combustion engine, MGU-K, MGU-H and a battery to deliver and recover energy.</p>
+            </article>
+            <article><span>03 / TYRES</span>
+                <h2>Tyres &amp; degradation</h2>
+                <p>Soft, medium and hard compounds trade speed for durability. Heat and wear reduce grip, so tyre management shapes pit strategy.</p>
+            </article>
+        </section>
+        <section class="aero-module section-wrap" data-aero-module data-mode="corner" aria-labelledby="aero-title">
+            <div class="aero-copy">
+                <p class="eyebrow">2026 AERODYNAMICS</p>
+                <h2 id="aero-title">Active aero modes.</h2>
+                <p>Switch modes to see how the front and rear wings change between straights and corners.</p>
+                <div class="aero-controls" role="group" aria-label="Active aero mode">
+                    <button type="button" data-aero-mode="straight" aria-pressed="false">Straight Mode</button>
+                    <button type="button" data-aero-mode="corner" aria-pressed="true">Corner Mode</button>
+                </div>
+                <p class="aero-status" data-aero-status aria-live="polite">High downforce • Corner Mode</p>
+                <p class="aero-explanation">2026 F1 replaces DRS with active aero. Wings move automatically based on corner vs straight.</p>
+            </div>
+            <div class="aero-visual">
+                <svg class="aero-car-svg" viewBox="0 0 320 430" role="img" aria-labelledby="aero-car-title aero-car-desc">
+          <title id="aero-car-title">Top view of a Formula 1 car</title>
+          <desc id="aero-car-desc">The front and rear wings change angle with the selected active aero mode.</desc>
+          <g fill="#090a0b" stroke="#55585d" stroke-width="2">
+            <rect x="68" y="106" width="36" height="72" rx="14" />
+            <rect x="216" y="106" width="36" height="72" rx="14" />
+            <rect x="68" y="272" width="36" height="72" rx="14" />
+            <rect x="216" y="272" width="36" height="72" rx="14" />
+          </g>
+          <path d="M160 34 C143 54 138 88 136 119 L116 148 L122 204 L127 299 L145 359 L160 392 L175 359 L193 299 L198 204 L204 148 L184 119 C182 88 177 54 160 34Z" fill="#292c30" stroke="#6b6e73" stroke-width="2" />
+          <path d="M160 49 L151 120 L156 340 L160 372 L164 340 L169 120Z" fill="#f04438" />
+          <path d="M124 165 L99 174 L107 229 L130 220Z M196 165 L221 174 L213 229 L190 220Z" fill="#3b3e43" stroke="#66696e" stroke-width="2" />
+          <path d="M146 91 Q160 72 174 91 L171 124 L149 124Z" fill="#111315" stroke="#8a8d91" stroke-width="2" />
+          <circle cx="160" cy="104" r="5" fill="#f04438" />
+          <g class="aero-wing aero-wing--front">
+            <rect x="51" y="67" width="218" height="13" rx="3" fill="#f04438" />
+            <rect x="75" y="83" width="170" height="5" rx="2" fill="#a92c28" />
+          </g>
+          <g class="aero-wing aero-wing--rear">
+            <rect x="70" y="354" width="180" height="13" rx="3" fill="#f04438" />
+            <rect x="91" y="371" width="138" height="5" rx="2" fill="#a92c28" />
+          </g>
+        </svg>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+        <p>An independent introduction to Formula 1.</p><span>INDEPENDENT FAN GUIDE <b>·</b> STATIC EDITION</span></footer>
+</body>
+
+</html>

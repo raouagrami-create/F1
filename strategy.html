@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Explore up-to-date Formula 1 race results, tyre stints and pit strategy.">
+  <title>Tire Strategy / The Inside Line</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/strategy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="The Inside Line home"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+      <a href="drivers.html">Drivers</a>
+      <a href="teams.html">Teams</a>
+      <a href="tech.html">Car tech</a>
+      <a href="rules2026.html">2026 Rules</a>
+      <a class="active" aria-current="page" href="strategy.html">Strategy</a>
+      <a href="helmet.html">Helmet Gallery</a>
+    </nav>
+    <span class="header-note"><i></i> RACE. ENGINEERED.</span>
+  </header>
+
+  <main>
+    <section class="page-hero section-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> Race strategy</p>
+      <div class="page-title-row">
+        <div>
+          <h1>Every stop<br><span>has a plan.</span></h1>
+          <p>Compare tyre strategies from the latest completed Grand Prix, or choose another race.</p>
+        </div>
+        <span class="page-index">07 / 07</span>
+      </div>
+    </section>
+
+    <section class="strategy-section section-wrap" aria-labelledby="strategy-title">
+      <div class="strategy-heading">
+        <div>
+          <p class="eyebrow" data-strategy-event>LOADING RACE DATA</p>
+          <h2 id="strategy-title">Tyre strategy timeline</h2>
+        </div>
+        <label class="strategy-race-picker">Select race
+          <select data-race-select disabled aria-label="Select a completed race">
+            <option>Loading races…</option>
+          </select>
+        </label>
+      </div>
+      <div class="strategy-stats" aria-label="Race statistics">
+        <p><strong data-stat-laps>—</strong><span>Race laps</span></p>
+        <p><strong data-stat-drivers>—</strong><span>Drivers shown</span></p>
+        <p><strong data-stat-stops>—</strong><span>Stops shown</span></p>
+      </div>
+      <p class="strategy-data-status" data-strategy-status role="status" aria-live="polite">Loading the latest race data from OpenF1…</p>
+      <div class="strategy-legend" aria-label="Tyre compound legend">
+        <span><i class="compound-swatch compound-soft"></i> Soft</span>
+        <span><i class="compound-swatch compound-medium"></i> Medium</span>
+        <span><i class="compound-swatch compound-hard"></i> Hard</span>
+        <span><i class="compound-swatch compound-intermediate"></i> Intermediate</span>
+        <span><i class="compound-swatch compound-wet"></i> Wet</span>
+      </div>
+      <div class="strategy-chart-scroll">
+        <div class="strategy-chart" data-strategy-chart aria-label="Top ten drivers' tyre stints by race lap"></div>
+        <div class="strategy-tooltip" data-strategy-tooltip role="tooltip" hidden></div>
+      </div>
+      <p class="strategy-note">Race and tyre stint data refresh from OpenF1 on page load and every 15 minutes. Small gaps between bars indicate pit stops.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+    <p>An independent introduction to Formula 1.</p>
+    <span>INDEPENDENT FAN GUIDE <b>·</b> STATIC EDITION</span>
+  </footer>
+</body>
+</html>

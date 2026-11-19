@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Explore the key 2026 Formula 1 regulation changes with interactive diagrams.">
+  <title>2026 Rules / The Inside Line</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/rules2026.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="The Inside Line home"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+      <a href="drivers.html">Drivers</a>
+      <a href="teams.html">Teams</a>
+      <a href="tech.html">Car tech</a>
+      <a class="active" aria-current="page" href="rules2026.html">2026 Rules</a>
+      <a href="strategy.html">Strategy</a>
+      <a href="helmet.html">Helmet Gallery</a>
+    </nav>
+    <span class="header-note"><i></i> RACE. ENGINEERED.</span>
+  </header>
+
+  <main>
+    <section class="page-hero section-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A new era of racing</p>
+      <div class="page-title-row">
+        <div>
+          <h1>Formula 1,<br><span>redefined.</span></h1>
+          <p>Explore the major car and power unit changes arriving for the 2026 season.</p>
+        </div>
+        <span class="page-index">06 / 07</span>
+      </div>
+    </section>
+
+    <section class="rules-explainer section-wrap" aria-label="2026 Formula 1 regulation changes">
+      <div class="rules-tabs" role="tablist" aria-label="2026 regulation topics">
+        <button id="rules-tab-aero" type="button" role="tab" aria-selected="true" aria-controls="rules-panel-aero" tabindex="0">Active aero</button>
+        <button id="rules-tab-power" type="button" role="tab" aria-selected="false" aria-controls="rules-panel-power" tabindex="-1">Power unit</button>
+        <button id="rules-tab-dimensions" type="button" role="tab" aria-selected="false" aria-controls="rules-panel-dimensions" tabindex="-1">Car dimensions</button>
+        <button id="rules-tab-tyres" type="button" role="tab" aria-selected="false" aria-controls="rules-panel-tyres" tabindex="-1">Tyres</button>
+      </div>
+
+      <section class="rules-panel" id="rules-panel-aero" role="tabpanel" aria-labelledby="rules-tab-aero">
+        <div class="rules-panel-copy">
+          <p class="eyebrow">01 / AERODYNAMICS</p>
+          <h2>Active aero replaces DRS.</h2>
+          <p>Front and rear wings switch between a low-drag straight setting and a high-downforce corner setting.</p>
+          <div class="rules-mode-controls" role="group" aria-label="Active aero mode">
+            <button type="button" data-rules-aero="straight" aria-pressed="false">Straight Mode</button>
+            <button type="button" data-rules-aero="corner" aria-pressed="true">Corner Mode</button>
+          </div>
+          <p class="rules-mode-label" data-rules-aero-label aria-live="polite">High downforce • Corner</p>
+        </div>
+        <div class="rules-diagram rules-aero-diagram" data-aero-mode="corner">
+          <svg viewBox="0 0 320 410" role="img" aria-labelledby="rules-car-title rules-car-desc">
+            <title id="rules-car-title">Top view of a 2026 Formula 1 car</title>
+            <desc id="rules-car-desc">Front and rear wings rotate to illustrate active aero modes.</desc>
+            <g fill="#090a0b" stroke="#55585d" stroke-width="2">
+              <rect x="58" y="106" width="38" height="70" rx="14" />
+              <rect x="224" y="106" width="38" height="70" rx="14" />
+              <rect x="58" y="273" width="38" height="70" rx="14" />
+              <rect x="224" y="273" width="38" height="70" rx="14" />
+            </g>
+            <path d="M160 35 C143 54 138 88 136 120 L114 151 L121 207 L127 299 L145 357 L160 389 L175 357 L193 299 L199 207 L206 151 L184 120 C182 88 177 54 160 35Z" fill="#292c30" stroke="#6b6e73" stroke-width="2" />
+            <path d="M160 49 L151 120 L156 340 L160 370 L164 340 L169 120Z" fill="#f04438" />
+            <path d="M126 166 L101 175 L109 229 L131 220Z M194 166 L219 175 L211 229 L189 220Z" fill="#3b3e43" stroke="#66696e" stroke-width="2" />
+            <g class="rules-wing rules-wing--front">
+              <rect x="39" y="65" width="242" height="14" rx="3" fill="#f04438" />
+              <rect x="66" y="82" width="188" height="5" rx="2" fill="#a92c28" />
+            </g>
+            <g class="rules-wing rules-wing--rear">
+              <rect x="55" y="348" width="210" height="14" rx="3" fill="#f04438" />
+              <rect x="79" y="365" width="162" height="5" rx="2" fill="#a92c28" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="rules-panel" id="rules-panel-power" role="tabpanel" aria-labelledby="rules-tab-power" hidden>
+        <div class="rules-panel-copy">
+          <p class="eyebrow">02 / POWER UNIT</p>
+          <h2>More electric power.</h2>
+          <p>Energy flows between fuel, the combustion engine, the MGU-K and the battery.</p>
+          <p class="rules-power-fact">2026: 50% electric, 50% combustion. MGU-K 350kW. MGU-H removed.</p>
+        </div>
+        <div class="rules-diagram rules-power-diagram">
+          <svg viewBox="0 0 620 180" role="img" aria-labelledby="power-diagram-title power-diagram-desc">
+            <title id="power-diagram-title">2026 power unit energy flow</title>
+            <desc id="power-diagram-desc">Fuel flows to the ICE. The ICE and battery send energy through the MGU-K to the wheels.</desc>
+            <defs>
+              <marker id="energy-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0 0 L8 4 L0 8Z" fill="#53dcff" />
+              </marker>
+            </defs>
+            <g class="energy-node">
+              <rect x="15" y="62" width="105" height="54" rx="4" />
+              <text x="67" y="94">FUEL</text>
+              <rect x="155" y="62" width="105" height="54" rx="4" />
+              <text x="207" y="94">ICE</text>
+              <rect x="295" y="62" width="105" height="54" rx="4" />
+              <text x="347" y="94">MGU-K</text>
+              <rect x="435" y="62" width="105" height="54" rx="4" />
+              <text x="487" y="94">BATTERY</text>
+            </g>
+            <path class="energy-flow" d="M120 89 H153" marker-end="url(#energy-arrow)" />
+            <path class="energy-flow" d="M260 89 H293" marker-end="url(#energy-arrow)" />
+            <path class="energy-flow energy-flow--reverse" d="M435 105 C420 139 318 139 314 118" marker-end="url(#energy-arrow)" />
+            <path class="energy-flow" d="M400 89 H565" marker-end="url(#energy-arrow)" />
+            <text class="energy-wheels-label" x="575" y="94">WHEELS</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="rules-panel" id="rules-panel-dimensions" role="tabpanel" aria-labelledby="rules-tab-dimensions" hidden>
+        <div class="rules-panel-copy">
+          <p class="eyebrow">03 / CAR DIMENSIONS</p>
+          <h2>Smaller, lighter cars.</h2>
+          <p>2026 cars are designed to be more agile, with reduced size and mass.</p>
+        </div>
+        <div class="rules-comparison">
+          <article class="rules-car-compare">
+            <h3>2025 CAR</h3>
+            <svg viewBox="0 0 360 120" role="img" aria-label="Outline of a wider, longer 2025 Formula 1 car">
+              <path class="comparison-car comparison-car--old" d="M28 52 H78 L104 39 H250 L280 49 H329 V71 H280 L250 82 H104 L78 70 H28Z" />
+              <circle cx="92" cy="47" r="13" /><circle cx="92" cy="75" r="13" />
+              <circle cx="267" cy="47" r="13" /><circle cx="267" cy="75" r="13" />
+              <line x1="92" y1="102" x2="267" y2="102" />
+            </svg>
+            <p>3,600 mm max wheelbase · 2,000 mm width</p>
+          </article>
+          <article class="rules-car-compare">
+            <h3>2026 CAR</h3>
+            <svg viewBox="0 0 360 120" role="img" aria-label="Outline of a shorter, narrower 2026 Formula 1 car">
+              <path class="comparison-car comparison-car--new" d="M48 53 H88 L111 42 H241 L266 51 H312 V69 H266 L241 78 H111 L88 67 H48Z" />
+              <circle cx="100" cy="49" r="11" /><circle cx="100" cy="72" r="11" />
+              <circle cx="253" cy="49" r="11" /><circle cx="253" cy="72" r="11" />
+              <line x1="100" y1="98" x2="253" y2="98" />
+            </svg>
+            <p>3,400 mm max wheelbase · 1,900 mm width</p>
+          </article>
+        </div>
+        <div class="rules-metrics">
+          <p><strong>~30 kg</strong><span>lighter</span></p>
+          <p><strong>200 mm</strong><span>shorter wheelbase</span></p>
+          <p><strong>100 mm</strong><span>narrower</span></p>
+        </div>
+      </section>
+
+      <section class="rules-panel" id="rules-panel-tyres" role="tabpanel" aria-labelledby="rules-tab-tyres" hidden>
+        <div class="rules-panel-copy">
+          <p class="eyebrow">04 / TYRES</p>
+          <h2>Narrower rubber.</h2>
+          <p>The 2026 tyre profile is slimmer to reduce drag and mass while keeping the familiar 18-inch wheel size.</p>
+        </div>
+        <div class="rules-tyre-cards">
+          <article><span>FRONT</span><strong>25 mm narrower</strong><p>A narrower front tyre helps reduce aerodynamic drag.</p></article>
+          <article><span>REAR</span><strong>30 mm narrower</strong><p>The rear tyre remains built to deliver traction under acceleration.</p></article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+    <p>An independent introduction to Formula 1.</p>
+    <span>INDEPENDENT FAN GUIDE <b>·</b> STATIC EDITION</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101113">
+    <meta name="description" content="Explore Formula 1 drivers, teams and portraits loaded from the OpenF1 API.">
+    <title>Drivers / The Inside Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="The Inside Line home"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Overview</a><a class="active" aria-current="page" href="drivers.html">Drivers</a><a href="teams.html">Teams</a><a href="tech.html">Car tech</a><a href="rules2026.html">2026 Rules</a><a href="strategy.html">Strategy</a><a href="helmet.html">Helmet Gallery</a></nav>
+        <span class="header-note"><i></i> RACE. ENGINEERED.</span>
+    </header>
+    <main>
+        <section class="page-hero section-wrap">
+            <p class="eyebrow"><span class="eyebrow-line"></span> The people</p>
+            <div class="page-title-row">
+                <div>
+                    <h1>Meet the <span>drivers.</span></h1>
+                    <p>Explore the latest grid: its drivers, teams and different paths to the top.</p>
+                </div><span class="page-index">02 / 04</span></div>
+            <div class="roster-toolbar"><span class="mono-label">LIVE DATA / OPENF1</span><label class="filter-label" for="driver-search">Find a driver <input id="driver-search" type="search" placeholder="Name or team" autocomplete="off"></label></div>
+        </section>
+        <section class="section-wrap roster-section" aria-label="Latest OpenF1 driver roster">
+            <p class="api-status" data-api-status role="status" aria-live="polite">Loading the latest driver list from OpenF1…</p>
+            <button class="retry-button" type="button" data-api-retry hidden>Retry loading drivers</button>
+            <div class="driver-grid" data-driver-grid></div>
+            <p class="empty-state" data-empty-state hidden>No drivers match that search.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">F1</span><span>THE INSIDE LINE</span></a>
+        <p>An independent introduction to Formula 1.</p><span>INDEPENDENT FAN GUIDE <b>·</b> STATIC EDITION</span></footer>
+</body>
+
+</html>
